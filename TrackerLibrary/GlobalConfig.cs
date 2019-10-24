@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
+using TrackerLibrary.DataAccess;
 
 namespace TrackerLibrary
 {
@@ -11,7 +13,7 @@ namespace TrackerLibrary
         //we have the option of saving to both text files and the database. So the List<IDataConnection> allows for one or more data sources to save to and pull from.
 
         //instantiate a new List<IdataConnection> right from the method.
-        //this Connections List holds anything that implements the IDataConnection interface - In this case, SqlConnector and TextConnection
+        //this Connections List holds anything that implements the IDataConnection interface - In this case, SqlConnector and TextConnector
         public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
 
         //initialize connections here
@@ -29,9 +31,14 @@ namespace TrackerLibrary
             if (textFiles)
             {
                 //TODO - Create the Text Connection
-                TextConnection txt = new TextConnection();
+                TextConnector txt = new TextConnector();
                 Connections.Add(txt);
             }
+        }
+
+        public static string ConnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
 }
