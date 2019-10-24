@@ -1,4 +1,4 @@
-﻿namespace TracterUI
+﻿namespace TrackerUI
 {
     partial class versusLabel
     {
@@ -55,6 +55,7 @@
             this.headerLabel.Size = new System.Drawing.Size(431, 100);
             this.headerLabel.TabIndex = 0;
             this.headerLabel.Text = "Tournament:";
+            this.headerLabel.Click += new System.EventHandler(this.HeaderLabel_Click);
             // 
             // tournamentName
             // 

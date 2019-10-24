@@ -1,4 +1,4 @@
-﻿namespace TracterUI
+﻿namespace TrackerUI
 {
     partial class CreatePrizeForm
     {
@@ -55,7 +55,7 @@
             // 
             // placeNumberValue
             // 
-            this.placeNumberValue.Location = new System.Drawing.Point(486, 243);
+            this.placeNumberValue.Location = new System.Drawing.Point(486, 248);
             this.placeNumberValue.Name = "placeNumberValue";
             this.placeNumberValue.Size = new System.Drawing.Size(333, 63);
             this.placeNumberValue.TabIndex = 25;
@@ -65,7 +65,7 @@
             this.placeNumberLabel.AutoSize = true;
             this.placeNumberLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.placeNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.placeNumberLabel.Location = new System.Drawing.Point(147, 243);
+            this.placeNumberLabel.Location = new System.Drawing.Point(147, 248);
             this.placeNumberLabel.Name = "placeNumberLabel";
             this.placeNumberLabel.Size = new System.Drawing.Size(286, 57);
             this.placeNumberLabel.TabIndex = 24;
@@ -73,7 +73,7 @@
             // 
             // placeNameValue
             // 
-            this.placeNameValue.Location = new System.Drawing.Point(486, 332);
+            this.placeNameValue.Location = new System.Drawing.Point(486, 337);
             this.placeNameValue.Name = "placeNameValue";
             this.placeNameValue.Size = new System.Drawing.Size(333, 63);
             this.placeNameValue.TabIndex = 27;
@@ -83,7 +83,7 @@
             this.placeNameLabel.AutoSize = true;
             this.placeNameLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.placeNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.placeNameLabel.Location = new System.Drawing.Point(147, 335);
+            this.placeNameLabel.Location = new System.Drawing.Point(147, 340);
             this.placeNameLabel.Name = "placeNameLabel";
             this.placeNameLabel.Size = new System.Drawing.Size(243, 57);
             this.placeNameLabel.TabIndex = 26;
@@ -91,17 +91,18 @@
             // 
             // prizeAmountValue
             // 
-            this.prizeAmountValue.Location = new System.Drawing.Point(486, 421);
+            this.prizeAmountValue.Location = new System.Drawing.Point(486, 426);
             this.prizeAmountValue.Name = "prizeAmountValue";
             this.prizeAmountValue.Size = new System.Drawing.Size(333, 63);
             this.prizeAmountValue.TabIndex = 29;
+            this.prizeAmountValue.Text = "0";
             // 
             // prizeAmountLabel
             // 
             this.prizeAmountLabel.AutoSize = true;
             this.prizeAmountLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.prizeAmountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.prizeAmountLabel.Location = new System.Drawing.Point(147, 421);
+            this.prizeAmountLabel.Location = new System.Drawing.Point(147, 426);
             this.prizeAmountLabel.Name = "prizeAmountLabel";
             this.prizeAmountLabel.Size = new System.Drawing.Size(277, 57);
             this.prizeAmountLabel.TabIndex = 28;
@@ -113,6 +114,7 @@
             this.prizePercentageValue.Name = "prizePercentageValue";
             this.prizePercentageValue.Size = new System.Drawing.Size(333, 63);
             this.prizePercentageValue.TabIndex = 31;
+            this.prizePercentageValue.Text = "0";
             // 
             // prizePercentageLabel
             // 
@@ -124,14 +126,13 @@
             this.prizePercentageLabel.Size = new System.Drawing.Size(333, 57);
             this.prizePercentageLabel.TabIndex = 30;
             this.prizePercentageLabel.Text = "Prize Percentage";
-            this.prizePercentageLabel.Click += new System.EventHandler(this.PrizePercentageLabel_Click);
             // 
             // orLabel
             // 
             this.orLabel.AutoSize = true;
             this.orLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.orLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.orLabel.Location = new System.Drawing.Point(334, 530);
+            this.orLabel.Location = new System.Drawing.Point(381, 536);
             this.orLabel.Name = "orLabel";
             this.orLabel.Size = new System.Drawing.Size(99, 57);
             this.orLabel.TabIndex = 32;
@@ -139,6 +140,7 @@
             // 
             // createPrizeButtton
             // 
+            this.createPrizeButtton.DialogResult = System.Windows.Forms.DialogResult.Abort;
             this.createPrizeButtton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.createPrizeButtton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.createPrizeButtton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -151,6 +153,7 @@
             this.createPrizeButtton.TabIndex = 33;
             this.createPrizeButtton.Text = "Create Prize";
             this.createPrizeButtton.UseVisualStyleBackColor = true;
+            this.createPrizeButtton.Click += new System.EventHandler(this.CreatePrizeButtton_Click);
             // 
             // CreatePrizeForm
             // 
@@ -174,7 +177,6 @@
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "CreatePrizeForm";
             this.Text = "CreatePrizeForm";
-            this.Load += new System.EventHandler(this.CreatePrizeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TracterUI
+namespace TrackerUI
 {
     public partial class versusLabel : Form
     {
@@ -33,6 +33,11 @@ namespace TracterUI
         }
 
         private void RoundDropDown_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HeaderLabel_Click(object sender, EventArgs e)
         {
 
         }

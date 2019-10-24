@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TracterUI.Properties
+namespace TrackerUI.Properties
 {
 
 

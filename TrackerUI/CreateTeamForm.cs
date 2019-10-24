@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TracterUI
+namespace TrackerUI
 {
     public partial class CreateTeamForm : Form
     {
@@ -28,6 +28,11 @@ namespace TracterUI
         }
 
         private void CreateTeamButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateTeamLabel_Click(object sender, EventArgs e)
         {
 
         }
