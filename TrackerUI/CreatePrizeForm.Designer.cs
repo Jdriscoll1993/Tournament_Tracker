@@ -1,4 +1,4 @@
-﻿namespace TracterUI
+﻿namespace TrackerUI
 {
     partial class CreatePrizeForm
     {
