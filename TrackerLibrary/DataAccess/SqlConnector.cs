@@ -33,7 +33,7 @@ namespace TrackerLibrary.DataAccess
                 // dapper
                 var p = new DynamicParameters();
 
-                //creating a list of the model parameters and adding them all to p.
+                //How to write information to the database: 
                 p.Add("@PlaceNumber", model.PlaceNumber);
                 p.Add("@PlaceName", model.PlaceName);
                 p.Add("@PrizeAmount", model.PrizeAmount);
@@ -43,7 +43,7 @@ namespace TrackerLibrary.DataAccess
                 //Execute() going to call something probably an INSERT UPDATE or DELETE not passing any info back
                 connection.Execute("dbo.spPrizes_Insert", p, commandType: CommandType.StoredProcedure);
 
-                // look at the dynamic parameter list called p and find "@id" - give me thie value of it and its of type int so can put it into model.Id
+                // how to capture variables that have been marked as output variables: 
                 model.Id = p.Get<int>("@id");
 
                 return model;
