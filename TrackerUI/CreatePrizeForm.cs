@@ -25,9 +25,9 @@ namespace TrackerUI
             if (ValidateForm())
             {
                 PrizeModel model = new PrizeModel(
-                    placeNameValue.Text, 
-                    placeNumberValue.Text, 
-                    prizeAmountValue.Text, 
+                    placeNameValue.Text,
+                    placeNumberValue.Text,
+                    prizeAmountValue.Text,
                     prizePercentageValue.Text);
 
                 foreach (IDataConnection db in GlobalConfig.Connections)
@@ -89,7 +89,7 @@ namespace TrackerUI
             {
                 output = false;
             }
-            
+
             return output;
         }
 
