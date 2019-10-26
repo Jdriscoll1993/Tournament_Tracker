@@ -43,7 +43,7 @@ namespace TrackerLibrary.DataAccess
                 //Execute() going to call something probably an INSERT UPDATE or DELETE not passing any info back
                 connection.Execute("dbo.spPrizes_Insert", p, commandType: CommandType.StoredProcedure);
 
-                // how to capture variables that have been marked as output variables: 
+                // how to capture variables that have been marked as output variables (using dapper): 
                 model.Id = p.Get<int>("@id");
 
                 return model;
