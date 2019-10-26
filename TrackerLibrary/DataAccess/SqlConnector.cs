@@ -15,6 +15,29 @@ namespace TrackerLibrary.DataAccess
 {
     class SqlConnector : IDataConnection
     {
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("Tournaments")))
+            {
+                var p = new DynamicParameters();
+
+                //How to write information to the database: 
+                p.Add("@FirstName", model.FirstName);
+                p.Add("@LastName", model.LastName);
+                p.Add("@EmailAddress", model.EmailAddress);
+                p.Add("@CellphoneNumber", model.CellphoneNumber);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                //Execute() going to call something probably an INSERT UPDATE or DELETE not passing any info back
+                connection.Execute("dbo.spPeople_Insert", p, commandType: CommandType.StoredProcedure);
+
+                // how to capture variables that have been marked as output variables (using dapper): 
+                model.Id = p.Get<int>("@id");
+
+                return model;
+            }
+        }
+
         // TODO - Make the CreatePrize method actually save to the database
         /// <summary>
         /// Saves a new prizse to the database.

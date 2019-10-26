@@ -78,7 +78,6 @@
             this.createTeamLabel.Size = new System.Drawing.Size(431, 100);
             this.createTeamLabel.TabIndex = 12;
             this.createTeamLabel.Text = "Create Team";
-            this.createTeamLabel.Click += new System.EventHandler(this.CreateTeamLabel_Click);
             // 
             // addTeamMemberButton
             // 
@@ -88,7 +87,7 @@
             this.addTeamMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addTeamMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.addTeamMemberButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.addTeamMemberButton.Location = new System.Drawing.Point(179, 435);
+            this.addTeamMemberButton.Location = new System.Drawing.Point(179, 423);
             this.addTeamMemberButton.Name = "addTeamMemberButton";
             this.addTeamMemberButton.Size = new System.Drawing.Size(368, 61);
             this.addTeamMemberButton.TabIndex = 20;
@@ -98,7 +97,7 @@
             // selectTeamMemberDropDown
             // 
             this.selectTeamMemberDropDown.FormattingEnabled = true;
-            this.selectTeamMemberDropDown.Location = new System.Drawing.Point(50, 335);
+            this.selectTeamMemberDropDown.Location = new System.Drawing.Point(50, 321);
             this.selectTeamMemberDropDown.Name = "selectTeamMemberDropDown";
             this.selectTeamMemberDropDown.Size = new System.Drawing.Size(622, 65);
             this.selectTeamMemberDropDown.TabIndex = 19;
@@ -108,7 +107,7 @@
             this.selectTeamMemberLabel.AutoSize = true;
             this.selectTeamMemberLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.selectTeamMemberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.selectTeamMemberLabel.Location = new System.Drawing.Point(40, 275);
+            this.selectTeamMemberLabel.Location = new System.Drawing.Point(40, 261);
             this.selectTeamMemberLabel.Name = "selectTeamMemberLabel";
             this.selectTeamMemberLabel.Size = new System.Drawing.Size(413, 57);
             this.selectTeamMemberLabel.TabIndex = 18;
@@ -141,12 +140,13 @@
             this.createMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.createMemberButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.createMemberButton.Location = new System.Drawing.Point(129, 446);
+            this.createMemberButton.Location = new System.Drawing.Point(129, 436);
             this.createMemberButton.Name = "createMemberButton";
             this.createMemberButton.Size = new System.Drawing.Size(368, 77);
             this.createMemberButton.TabIndex = 22;
             this.createMemberButton.Text = "Create Member";
             this.createMemberButton.UseVisualStyleBackColor = true;
+            this.createMemberButton.Click += new System.EventHandler(this.CreateMemberButton_Click);
             // 
             // cellphoneValue
             // 
@@ -201,7 +201,6 @@
             this.lastNameLabel.Size = new System.Drawing.Size(220, 57);
             this.lastNameLabel.TabIndex = 24;
             this.lastNameLabel.Text = "Last Name";
-            this.lastNameLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // firstNameValue
             // 
@@ -260,7 +259,6 @@
             this.createTeamButton.TabIndex = 27;
             this.createTeamButton.Text = "Create Team";
             this.createTeamButton.UseVisualStyleBackColor = true;
-            this.createTeamButton.Click += new System.EventHandler(this.CreateTeamButton_Click);
             // 
             // CreateTeamForm
             // 
@@ -283,7 +281,6 @@
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "CreateTeamForm";
             this.Text = "CreateTeamForm";
-            this.Load += new System.EventHandler(this.CreateTeamForm_Load);
             this.AddNewMemberGroupBox.ResumeLayout(false);
             this.AddNewMemberGroupBox.PerformLayout();
             this.ResumeLayout(false);

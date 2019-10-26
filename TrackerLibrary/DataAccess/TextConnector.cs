@@ -11,6 +11,12 @@ namespace TrackerLibrary.DataAccess
     {
         //private constant. PrizesFile value will never change.
         private const string PrizesFile = "PrizeModels.csv";
+
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            throw new NotImplementedException();
+        }
+
         // TODO - Wire up the CreatePrize for text files.
         public PrizeModel CreatePrize(PrizeModel model)
         {
