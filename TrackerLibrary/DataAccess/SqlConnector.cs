@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 using TrackerLibrary.Models;
 
@@ -15,9 +16,11 @@ namespace TrackerLibrary.DataAccess
 {
     class SqlConnector : IDataConnection
     {
+
+        private const string db = "Tournaments";
         public PersonModel CreatePerson(PersonModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("Tournaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString(db)))
             {
                 var p = new DynamicParameters();
 
@@ -37,8 +40,6 @@ namespace TrackerLibrary.DataAccess
                 return model;
             }
         }
-
-        // TODO - Make the CreatePrize method actually save to the database
         /// <summary>
         /// Saves a new prizse to the database.
         /// </summary>
@@ -46,16 +47,15 @@ namespace TrackerLibrary.DataAccess
         /// <returns>The prize information, including the unique identifier.</returns>
         /// 
         // This code will execute this stored procedure dbo.spPrizes_Insert passing in all of the Added information through p
-        // Then get back information (@id) though we havent captured where it comes into
+        // Then get back information (@id)
         public PrizeModel CreatePrize(PrizeModel model)
         {
             //Connection to the database
             //a using statement is a safe way to connect to a database. No matter what, after the closing } the connection is closed.
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("Tournaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString(db)))
             {
                 // dapper
                 var p = new DynamicParameters();
-
                 //How to write information to the database: 
                 p.Add("@PlaceNumber", model.PlaceNumber);
                 p.Add("@PlaceName", model.PlaceName);
@@ -70,9 +70,18 @@ namespace TrackerLibrary.DataAccess
                 model.Id = p.Get<int>("@id");
 
                 return model;
-
-                // ERROR HANDLING what happens if things go wrong? what if Tournaments doesnt exist? what if it was Tournament? How is it going to blow up?
             }
+        }
+
+        public List<PersonModel> GetPerson_All()
+        {
+            List<PersonModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString(db)))
+            {
+                output = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
+            }
+
+            return output;
         }
     }
 }
