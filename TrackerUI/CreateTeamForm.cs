@@ -58,7 +58,13 @@ namespace TrackerUI
                 p.EmailAddress = emailValue.Text;
                 p.CellphoneNumber = cellphoneValue.Text;
 
-                GlobalConfig.Connection.CreatePerson(p);
+                p = GlobalConfig.Connection.CreatePerson(p);
+
+                //add new members to the combo box;
+                selectedTeamMembers.Add(p);
+
+                //refresh to show new value;
+                WireUpLists();
 
                 firstNameValue.Text = "";
                 lastNameValue.Text = "";
